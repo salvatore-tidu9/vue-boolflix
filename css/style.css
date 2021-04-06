@@ -59,6 +59,7 @@ header {
 .header_right .search_text_area {
     height: 30px;
     font-weight: bold;
+    color: rgb(141, 141, 141);
     margin: 20px 0;
     padding: 5px;
     border-radius: 5px;
