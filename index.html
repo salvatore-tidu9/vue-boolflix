@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <title>Boolflix</title>
+</head>
+
+<body>
+
+    <div id="root">
+
+        <header>
+
+            <i class="fas fa-bars hamburger_menu"></i>
+
+            <div class="header_left">
+
+                <a href="#"><img class="logo" src="img/boolflix.png" alt=""></a> 
+
+                <ul>
+
+                    <li><a href="">Home</a></li>
+
+                    <li><a href="">Serie TV</a></li>
+
+                    <li><a href="">Film</a></li>
+
+                    <li><a href="">Originali</a></li>
+
+                    <li><a href="">Aggiunti di recente</a></li>
+
+                    <li><a href="">La mia lista</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="header_right">
+
+                <input type="text" class="search_text_area" placeholder="Cerca" v-model="searchText" @keyup.enter="search">
+
+                <i class="fas fa-search search" @click="search"></i>
+
+                <a href=""><i class="fas fa-bell"></i></a>
+
+                <a href=""><img src="img/profile.png"></a>
+
+                <a href=""><i class="fas fa-sort-down down"></i></a>
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="container">
+
+                <div class="card" v-for="film in filmsList">
+
+                    <h3 class="title">{{film.title}}</h3>
+
+                    <h4 class="original_title">{{film.original_title}}</h4>
+
+                    <span class="language">{{film.original_language}}</span>
+
+                    <span class="vote">{{film.vote_average}}</span>
+                
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

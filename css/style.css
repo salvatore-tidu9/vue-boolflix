@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: rgb(29, 28, 28);
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.header_left, .header_right {
+    display: flex;
+    align-items: center;
+}
+
+.header_right {
+    margin-right: 50px;
+}
+
+.header_left .logo {
+    height: 35px;
+    margin-right: 25px;
+}
+
+.header_left ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.header_left a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+}
+
+.header_left a:hover {
+    color: grey;
+    transition: 0.2s;
+}
+
+.hamburger_menu {
+    display: none;
+    margin-left: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.header_right .search_text_area {
+    height: 30px;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: black;
+    border-bottom: 1px solid white;
+    background-color: black;
+}
+
+.header_right i {
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.header_right .search:hover {
+    cursor: pointer;
+}
+
+.header_right i:hover {
+    color: grey;
+    transition: 0.2s;
+}
+
+.header_right .down {
+    margin-left: 15px;
+}
+
+.header_right img {
+    height: 35px;
+    margin-left: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 250px;
+    padding: 20px;
+    margin: 5px;
+    height: 400px;
+    text-align: center;
+    border-radius: 3px;
+    background: grey;
+}
+
+.card .title, .card .original_title, .card .language, .card .vote {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+
+
+@media screen and (max-width: 1199px) {
+
+    header {
+        height: 70px;
+    }
+
+    .header_left ul {
+        display: none;
+    }
+
+    .search_text_area, .header_right a {
+        display: none;
+    }
+
+    .hamburger_menu {
+        display: block;
+    }
+
+    .header_left .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } 
+
+    .header_right {
+        margin-right: 25px;
+    }
+    
+}
