@@ -62,17 +62,93 @@
 
         <main>
 
+            <h1 class="container_title" v-if="moviesList.length > 0">Film</h1>
+
             <div class="container">
 
-                <div class="card" v-for="film in filmsList">
+                <div class="card" v-for="movie in moviesList">
 
-                    <h3 class="title">{{film.title}}</h3>
+                    <div class="cover">
 
-                    <h4 class="original_title">{{film.original_title}}</h4>
+                        <img v-if="movie.poster_path":src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
 
-                    <span class="language">{{film.original_language}}</span>
+                        <img v-else src="img/image_not_available.PNG" alt="">
 
-                    <span class="vote">{{film.vote_average}}</span>
+                    </div>
+
+                    <h3 class="title">TITOLO: <br> {{movie.title}}</h3>
+
+                    <h4 class="original_title">TITOLO ORIGINALE: <br> {{movie.original_title}}</h4>
+
+                    <div class="flag">
+
+                        <img v-if="getFlag(movie.original_language)" :src="'img/flags/' + movie.original_language + '.png'" alt="">
+
+                        <img v-else src="img/flags/flag_not_available.png" alt="">
+
+                    </div>
+
+                    <span class="vote">VOTO: <br> {{movie.vote_average}}</span>
+
+                    <span>
+                        
+                        <i class="fas fa-star fas_star" v-for="i in voteStars(movie.vote_average)"></i>
+
+                        <i class="far fa-star far_star" v-for="i in (5 - voteStars(movie.vote_average))"></i>
+                    
+                    </span>
+
+                    <!-- <div class="overview">
+
+                        <p>{{movie.overview}}</p>
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <h1 class="container_title" v-if="tvShowsList.length > 0">Serie TV</h1>
+
+            <div class="container">
+
+                <div class="card" v-for="tvShow in tvShowsList">
+
+                    <div class="cover">
+
+                        <img v-if="tvShow.poster_path":src="'https://image.tmdb.org/t/p/w342' + tvShow.poster_path" alt="">
+
+                        <img v-else src="img/image_not_available.PNG" alt="">
+
+                    </div>
+
+                    <h3 class="title">TITOLO: <br> {{tvShow.name}}</h3>
+
+                    <h4 class="original_title">TITOLO ORIGINALE: <br> {{tvShow.original_name}}</h4>
+
+                    <div class="flag">
+
+                        <img v-if="getFlag(tvShow.original_language)" :src="'img/flags/' + tvShow.original_language + '.png'" alt="">
+
+                        <img v-else src="img/flags/flag_not_available.png" alt="">
+
+                    </div>
+
+                    <span class="vote">VOTO: <br> {{tvShow.vote_average}}</span>
+
+                    <span>
+                        
+                        <i class="fas fa-star fas_star" v-for="i in voteStars(tvShow.vote_average)"></i>
+
+                        <i class="far fa-star far_star" v-for="i in (5 - voteStars(tvShow.vote_average))"></i>
+                
+                    </span>
+
+                    <!-- <div class="overview">
+
+                        <p>{{tvShow.overview}}</p>
+
+                    </div> -->
                 
                 </div>
 
@@ -80,19 +156,12 @@
 
         </main>
 
-
-
     </div>
 
 
 
-
-
-
-
-
-
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
