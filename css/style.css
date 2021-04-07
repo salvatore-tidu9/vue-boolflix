@@ -107,19 +107,14 @@ header {
 .card {
     position: relative;
     display: flex;
-    align-items: center;
     flex-direction: column;
     flex-basis: 350px;
     padding: 20px;
+    padding-top: 15px;
     margin: 5px;
     height: 520px;
-    text-align: center;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.5);
-    /* display: table;
-    content: "";
-    clear: both;
-    text-overflow: ellipsis; */
 }
 
 .cover img  {
@@ -136,25 +131,30 @@ header {
     border-radius: 5px;
 }
 
-.cover:hover {
-    cursor: pointer;
-    opacity: 0.2;
-}
-
 .card:hover {
     transition: 0.1s;
     transition: 1s ease;
     transform: scale(1.1);
     z-index: 1;
-    
+    cursor: pointer;
+    overflow-y: auto;
 }
 
-/* .overview p {
+.card:hover .cover {
+    display: none;
+}
+
+.overview  {
+    display: none;
     font-size: 12px;
-} */
+}
+
+.card:hover .overview {
+    display: block;
+}
 
 .title, .original_title, .language, .vote, .fas_star {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
     color: white;
@@ -162,6 +162,10 @@ header {
 
 .far_star, .overview {
     color: white;
+}
+
+.flag img {
+    width: 40px;
 }
 
 
