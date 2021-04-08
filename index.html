@@ -24,7 +24,7 @@
 
             <div class="header_left">
 
-                <a href="#"><img class="logo" src="img/boolflix.png" alt=""></a> 
+                <a href="#"><img class="logo" src="img/Netflix-logo.png" alt=""></a> 
 
                 <ul>
 
@@ -70,7 +70,7 @@
 
                     <div class="cover">
 
-                        <img v-if="movie.poster_path":src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
+                        <img v-if="movie.poster_path" :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" alt="">
 
                         <img v-else src="img/image_not_available.PNG" alt="">
 
@@ -97,6 +97,8 @@
                         <i class="far fa-star far_star" v-for="i in (5 - voteStars(movie.vote_average))"></i>
                     
                     </span>
+
+                    <span class="date">DATA DI USCITA: {{movie.release_date}}</span>
 
                     <div class="overview">
 
@@ -143,6 +145,8 @@
                         <i class="far fa-star far_star" v-for="i in (5 - voteStars(tvShow.vote_average))"></i>
                 
                     </span>
+
+                    <span class="date">DATA DI USCITA: {{tvShow.first_air_date}}</span>
 
                     <div class="overview">
 

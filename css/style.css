@@ -29,7 +29,7 @@ header {
 }
 
 .header_left .logo {
-    height: 35px;
+    height: 55px;
     margin-right: 25px;
 }
 
@@ -153,20 +153,26 @@ header {
     display: block;
 }
 
-.title, .original_title, .language, .vote, .fas_star {
+.title, .original_title, .language, .vote, .genre, .date {
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
     color: white;
 }
 
-.far_star, .overview {
+.fas_star, .far_star {
+    margin-bottom: 10px;
+    color: rgb(255, 217, 0);
+}
+
+.overview {
     color: white;
 }
 
 .flag img {
     width: 40px;
 }
+
 
 
 ::-webkit-scrollbar {
